@@ -20,6 +20,8 @@ module Recommendable
                               :class_name => Recommendable.user_class.to_s
           has_many :disliked_by, :through => :dislikes, :source => :user, :foreign_key => :user_id,
                               :class_name => Recommendable.user_class.to_s
+          has_many :stashed_by, :through => :stashes, :source => :user, :foreign_key => :user_id,
+                              :class_name => Recommendable.user_class.to_s
           
           include LikeableMethods
           include DislikeableMethods
